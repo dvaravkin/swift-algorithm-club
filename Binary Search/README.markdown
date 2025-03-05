@@ -1,5 +1,6 @@
 # Binary Search
 
+**([Русская версия](https://github.com/dvaravkin/swift-algorithm-club/tree/master/Binary%20Search/README.md))**
 Goal: Quickly find an element in an array.
 
 Let's say you have an array of numbers and you want to determine whether a specific number is in that array, and if so, at which index.
