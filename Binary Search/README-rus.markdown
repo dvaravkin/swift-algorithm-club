@@ -1,6 +1,7 @@
+**([English version](https://github.com/dvaravkin/swift-algorithm-club/tree/master/Binary%20Search/README.md))**
+
 # Бинарный поиск
 
-**([English version](https://github.com/dvaravkin/swift-algorithm-club/tree/master/Binary%20Search/README.md))**
 Цель: быстро найти элемент в массиве.
 
 Допустим, у вас есть массив чисел, и вы хотите определить, находится ли конкретное число в этом массиве, и если да, то по какому индексу.
