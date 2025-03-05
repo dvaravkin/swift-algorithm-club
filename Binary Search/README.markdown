@@ -1,4 +1,4 @@
-**([Русская версия](https://github.com/dvaravkin/swift-algorithm-club/tree/master/Binary%20Search/README-rus.md))**
+**([Русская версия](https://github.com/dvaravkin/swift-algorithm-club/tree/master/Binary%20Search/README-rus.markdown))**
 
 # Binary Search
 
