@@ -1,48 +1,48 @@
-# Bubble Sort
+# Сортировка пузырьком
 
-Bubble sort is a sorting algorithm that is implemented by starting in the beginning of the array and swapping the first two elements only if the first element is greater than the second element. This comparison is then moved onto the next pair and so on and so forth. This is done until the array is completely sorted. The smaller items slowly “bubble” up to the beginning of the array. Sometimes this algorithm is refered as Sinking sort, due to the larger, or heavier elements sinking to the end of the array.
+Сортировка пузырьком — это алгоритм сортировки, который начинается с начала массива и меняет местами первые два элемента только в том случае, если первый элемент больше второго. Затем это сравнение переносится на следующую пару и так далее. Это продолжается до тех пор, пока массив не будет полностью отсортирован. Меньшие элементы постепенно «всплывают» в начало массива. Иногда этот алгоритм называют сортировкой с погружением, так как более крупные или тяжёлые элементы опускаются в конец массива.
 
-##### Runtime:
-- Average: O(N^2)
-- Worst: O(N^2)
+##### Время выполнения:
+- В среднем: O(N^2)
+- Худший вариант: O(N^2)
 
-##### Memory:
+##### Память:
 - O(1)
 
-### Implementation:
+### Реализация:
 
-The implementation will not be shown as the average and worst runtimes show that this is a very inefficient algorithm. However, having a grasp of the concept will help you understand the basics of simple sorting algorithms.
+Реализация не будет приведена, так как среднее и худшее время выполнения показывают, что это очень неэффективный алгоритм. Однако понимание этой концепции поможет вам понять основы простых алгоритмов сортировки.
 
-Bubble sort is a very simple sorting algorithm, it consists in comparing pairs of adjacent elements in the array, if the first element is larger, swap them, otherwise, you do nothing and go for the next comparison.
-This is accomplished by looking through the array `n` times, `n` being the amount of elements in the array.
+Пузырьковая сортировка — это очень простой алгоритм сортировки. Он заключается в сравнении пар соседних элементов в массиве. Если первый элемент больше, они меняются местами, в противном случае ничего не делается и продолжается следующее сравнение. 
+Это достигается за счёт просмотра массива `n` раз, где `n` — количество элементов в массиве.
 
 ![animated gif of the bubble sort algorithm](https://s3.amazonaws.com/codecademy-content/programs/tdd-js/articles/BubbleSort.gif)
 
-This GIF shows a inverted implementation than 
+На этом GIF-изображении показана обратная реализация
 
-#### Example
-Let us take the array `[5, 1, 4, 2, 8]`, and sort the array from lowest number to greatest number using bubble sort. In each step, elements written in bold are being compared. Three passes will be required.
+#### Пример
+Давайте возьмём массив `[5, 1, 4, 2, 8]` и отсортируем его от наименьшего числа к наибольшему с помощью пузырьковой сортировки. На каждом этапе сравниваются элементы, выделенные жирным шрифтом. Потребуется три прохода.
 
-##### First Pass
-[ **5 1** 4 2 8 ] -> [ **1 5** 4 2 8 ], Here, algorithm compares the first two elements, and swaps since 5 > 1.
+##### Первый Проход
+[ **5 1** 4 2 8 ] -> [ **1 5** 4 2 8 ], Здесь алгоритм сравнивает первые два элемента и меняет их местами, поскольку 5 > 1.
 
-[ 1 **5 4** 2 8 ] -> [ 1 **4 5** 2 8 ], Swap since 5 > 4 
+[ 1 **5 4** 2 8 ] -> [ 1 **4 5** 2 8 ], меняет местами, так как 5 > 4
 
-[ 1 4 **5 2** 8 ] -> [ 1 4 **2 5** 8 ], Swap since 5 > 2 
+[ 1 4 **5 2** 8 ] -> [ 1 4 **2 5** 8 ], меняет местами, так как 5 > 2 
 
-[ 1 4 2 **5 8** ] -> [ 1 4 2 **5 8** ], Now, since these elements are already in order (8 > 5), algorithm does not swap them.
+[ 1 4 2 **5 8** ] -> [ 1 4 2 **5 8** ], здесь, поскольку эти элементы уже расположены по порядку (8 > 5), алгоритм не меняет их местами.
 
-##### Second Pass
+##### Второй проход
 [ **1 4** 2 5 8 ] -> [ **1 4** 2 5 8 ]
 
-[ 1 **4 2** 5 8 ] -> [ 1 **2 4** 5 8 ], Swap since 4 > 2 
+[ 1 **4 2** 5 8 ] -> [ 1 **2 4** 5 8 ], меняет местами, так как 4 > 2 
 
 [ 1 2 **4 5** 8 ] -> [ 1 2 **4 5** 8 ]
 
 [ 1 2 4 **5 8** ] -> [ 1 2 4 **5 8** ]
-Now, the array is already sorted, but the algorithm does not know if it is completed. The algorithm needs one whole pass without any swap to know it is sorted.
+Теперь массив уже отсортирован, но алгоритм не знает, завершена ли сортировка. Алгоритму нужен один полный проход без перестановок, чтобы понять, что массив отсортирован.
 
-##### Third Pass
+##### Третий Проход
 [ **1 2** 4 5 8 ] -> [ **1 2** 4 5 8 ]
 
 [ 1 **2 4** 5 8 ] -> [ 1 **2 4** 5 8 ]
@@ -51,9 +51,9 @@ Now, the array is already sorted, but the algorithm does not know if it is compl
 
 [ 1 2 4 **5 8** ] -> [ 1 2 4 **5 8** ]
 
-This is the same for the forth and fifth passes.
+То же самое происходит на четвёртом и пятом проходах.
 
-#### Code
+#### Код
 ```swift
 for i in 0..<array.count {
   for j in 1..<array.count {
@@ -67,8 +67,9 @@ for i in 0..<array.count {
 return array
 ```
 
-#### Optimization
-The bubble sort algorithm can be easily optimized by observing that the `n-th` pass finds the `n-th` largest element and puts it into its final place. So, the inner loop can avoid looking at the last `n-1` items when running for the `n-th` time:
+#### Оптимизация
+Алгоритм пузырьковой сортировки можно легко оптимизировать, если заметить, что при `n-ном` проходе находится `n-й` самый большой элемент, который помещается в конец массива. Таким образом, внутренний цикл может не просматривать последние `n-1` элементы при выполнении за `n` раз:
+
 
 ```swift
 for i in 0..<array.count {
@@ -83,45 +84,46 @@ for i in 0..<array.count {
 return array
 ```
 
-The only change made was on the second line, changing the interval from `1..<array.count` to `1..<array.count - i`, effectively cutting the number of comparisons by half.
+Единственное изменение коснулось второй строки: интервал `1..<array.count` был заменён на `1..<array.count - i`, что фактически сократило количество сравнений вдвое.
 
-The ordering with the optimized code would look something like this for the array  `[5, 1, 4, 2, 8]`:
+Для массива `[5, 1, 4, 2, 8]` упорядочивание с оптимизированным кодом будет выглядеть примерно так:
 
-##### First Pass
-[ **5 1** 4 2 8 ] -> [ **1 5** 4 2 8 ], Swaps since 5 > 1
+##### Первый Проход
+[ **5 1** 4 2 8 ] -> [ **1 5** 4 2 8 ], меняет местами, так как 5 > 1
 
-[ 1 **5 4** 2 8 ] -> [ 1 **4 5** 2 8 ], Swap since 5 > 4 
+[ 1 **5 4** 2 8 ] -> [ 1 **4 5** 2 8 ], меняет местами, так как 5 > 4 
 
-[ 1 4 **5 2** 8 ] -> [ 1 4 **2 5** 8 ], Swap since 5 > 2 
+[ 1 4 **5 2** 8 ] -> [ 1 4 **2 5** 8 ], меняет местами, так как 5 > 2 
 
-[ 1 4 2 **5 8** ] -> [ 1 4 2 **5 8** ], Now, since these elements are already in order (8 > 5), algorithm does not swap them. 
+[ 1 4 2 **5 8** ] -> [ 1 4 2 **5 8** ], здесь, поскольку эти элементы уже упорядочены (8 > 5), алгоритм не меняет их местами.
 
-*by the end of the first pass, the last element is guaranteed to be the largest*
+*к концу первого прохода последний элемент гарантированно будет самым большим*
 
-##### Second Pass
+##### Второй Проход
 [ **1 4** 2 5 8 ] -> [ **1 4** 2 5 8 ]
 
-[ 1 **4 2** 5 8 ] -> [ 1 **2 4** 5 8 ], Swap since 4 > 2 
+[ 1 **4 2** 5 8 ] -> [ 1 **2 4** 5 8 ], меняет местами, так как 4 > 2 
 
-[ 1 2 **4 5** 8 ] -> [ 1 2 **4 5** 8 ], As the first loop has occured once, the inner loop stops here, not comparing 5 with 8
+[ 1 2 **4 5** 8 ] -> [ 1 2 **4 5** 8 ], поскольку первый цикл выполнился один раз, внутренний цикл останавливается здесь, не сравнивая 5 с 8
 
-##### Third Pass
+##### Третий Проход
+
 [ **1 2** 4 5 8 ] -> [ **1 2** 4 5 8 ]
 
-[ 1 **2 4** 5 8 ] -> [ 1 **2 4** 5 8 ] again, stoping one comparison short
+[ 1 **2 4** 5 8 ] -> [ 1 **2 4** 5 8 ] аналогично, на одно сравнение меньше
 
-##### Fourth Pass
+##### Четвертый Проход
 [ **1 2** 4 5 8 ] -> [ **1 2** 4 5 8 ]
 
-There is no Fifth pass
+Пятого прохода нет
 
-#### Conclusion
+#### Заключение
 
-Even with the proposed optimizations, this is still a terribly inefficient sorting algorithm. A good alternative is [Merge Sort](https://github.com/raywenderlich/swift-algorithm-club/tree/master/Merge%20Sort), that not only is better performing, has a similar degree of dificulty to implement.
+Даже с учётом предложенных оптимизаций этот алгоритм сортировки по-прежнему крайне неэффективен. Хорошей альтернативой является [сортировка слиянием](https://github.com/dvaravkin/swift-algorithm-club/tree/master/Merge%20Sort), которая не только работает лучше, но и имеет схожую сложность реализации.
 
-*Updated for the Swift Algorithm Club by Julio Brazil*
+*Обновлено для Swift Algorithm Club Хулио Бразилиа*
 
-##### Supporting Links
+##### Вспомогательные ссылки
 [Code Pumpkin](https://codepumpkin.com/bubble-sort/)
 [Wikipedia](https://en.wikipedia.org/wiki/Bubble_sort)
 [GeeksforGeeks](https://www.geeksforgeeks.org/bubble-sort/)
